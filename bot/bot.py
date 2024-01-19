@@ -135,7 +135,7 @@ class Bot(object):
                 self.__polling_thread.join()
 
     # noinspection PyUnusedLocal
-    def _signal_handler(self, sig: int):
+    def _signal_handler(self, sig: int, _):
         if self.running:
             self.log.debug("Stopping bot by signal '{name} ({code})'. Repeat for force exit.".format(
                 name=signal_name_by_code(sig), code=sig
