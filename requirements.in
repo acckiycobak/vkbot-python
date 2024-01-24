@@ -1,0 +1,9 @@
+cached-property
+expiringdict 
+monotonic 
+python-baseconv 
+requests 
+six 
+gTTS 
+urllib3 
+click 
