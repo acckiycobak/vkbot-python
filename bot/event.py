@@ -28,6 +28,7 @@ class Event(object):
             self.from_chat = data['chat']['chatId']
             self.chat_type = data['chat']['type']
             self.message_author = data.get('from', {})
+            self.userId = data.get('from', {}).get('userId')
 
         elif type_ == EventType.CALLBACK_QUERY:
             self.msgId = data['message'].get('msgId')
@@ -36,6 +37,6 @@ class Event(object):
             self.chat_type = data['message']['chat']['type']
             self.message_author = data['queryId'].split(':')[1]
             self.queryId = data['queryId']
-        
+
     def __repr__(self):
         return "Event(type='{self.type}', data='{self.data}')".format(self=self)
