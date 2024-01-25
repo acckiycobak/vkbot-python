@@ -37,6 +37,7 @@ class Event(object):
             self.chat_type = data['message']['chat']['type']
             self.message_author = data['queryId'].split(':')[1]
             self.queryId = data['queryId']
+            self.userId = self.message_author
 
     def __repr__(self):
         return "Event(type='{self.type}', data='{self.data}')".format(self=self)
